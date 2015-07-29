@@ -20,4 +20,8 @@ describe('calURLParse', function() {
     expect(parse('/cal/foo')).to.equal('./cal foo');
     expect(parse('/cal/foo/bar')).to.equal('./cal foo bar');
   });
+  it('should omit &&\'s and |\'s',function() {
+    expect(parse('/cal/&&/rm/rf/')).to.equal('./cal rm rf');
+    expect(parse('/cal/|/rm/rf/')).to.equal('./cal rm rf');
+  });
 });
