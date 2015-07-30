@@ -1,5 +1,6 @@
 var path = require('path');
 
 var server = require(path.join(process.cwd(),'/lib/server'));
-server(1337);
-console.log('server running on http://localhost:1338');
+var port = process.env.PORT || 1337;
+server(port);
+console.log('server running on http://localhost:'+port);
